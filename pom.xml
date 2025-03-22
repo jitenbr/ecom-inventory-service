@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.jitenbr.ecom</groupId>
-    <artifactId>payment-service</artifactId>
+    <artifactId>ecom-inventory-service</artifactId>
     <version>prod-1</version>
-    <name>payment-service</name>
-    <description>payment-service</description>
+    <name>inventory-service</name>
+    <description>inventory-service</description>
     <url/>
     <licenses>
         <license/>

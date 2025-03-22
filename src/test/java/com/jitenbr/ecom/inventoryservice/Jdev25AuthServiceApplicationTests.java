@@ -1,4 +1,4 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

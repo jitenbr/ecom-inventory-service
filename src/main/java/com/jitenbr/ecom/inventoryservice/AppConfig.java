@@ -1,4 +1,4 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +13,15 @@ public class AppConfig {
     {
         return webClientBuilder
                 .baseUrl("http://localhost:8082/api/v1/validate")
+                .filter(new LoggingWebClientFilter())
+                .build();
+    }
+
+    @Bean(name = "product-service")
+    public WebClient webClientProductService(WebClient.Builder webClientBuilder)
+    {
+        return webClientBuilder
+                .baseUrl("http://localhost:8087/api/v1")
                 .filter(new LoggingWebClientFilter())
                 .build();
     }

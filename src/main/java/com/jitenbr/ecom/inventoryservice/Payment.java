@@ -1,4 +1,4 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,14 +1,14 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PaymentServiceApplication {
+public class InventoryServiceApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(PaymentServiceApplication.class, args);
+        SpringApplication.run(InventoryServiceApplication.class, args);
 
     }
 

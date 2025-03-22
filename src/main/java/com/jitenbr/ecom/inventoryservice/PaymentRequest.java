@@ -1,4 +1,4 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import lombok.Getter;
 import lombok.Setter;

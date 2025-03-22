@@ -1,4 +1,4 @@
-package com.jitenbr.ecom.paymentservice;
+package com.jitenbr.ecom.inventoryservice;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
