@@ -65,10 +65,24 @@ public class MainRestController {
     @PostMapping("/reserve/stock")
     public ResponseEntity<?> reserveStock(@RequestBody StockRequest stockRequest, @RequestHeader("Authorization") String token)
     {
-        log.info("Received request to reserve stock: {}", stockRequest);
+        log.info("Received request to reserve stock: {}", stockRequest.getProductid());
         if(authService.validateToken(token))
         {
+
+            try {
+                Thread.sleep(20*1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
             log.info("Token is valid: {}", token);
+
+            if(stockRepository.findById(stockRequest.getProductid()).isEmpty()) {
+                log.info("Stock not found for productid: {}", stockRequest.getProductid());
+                // not found exception
+                throw new RuntimeException("Stock not found:" + stockRequest.getProductid());
+            }
+
             Stock stock = stockRepository.findById(stockRequest.getProductid()).get();
             if(stock.getQuantity() >= stockRequest.getQuantity())
             {
@@ -80,13 +94,13 @@ public class MainRestController {
             else
             {
                 log.info("Insufficient stock: {}", stock);
-                return ResponseEntity.badRequest().body("Insufficient stock");
+                throw new RuntimeException("Insufficient stock " + stockRequest.getProductid());
             }
         }
         else
         {
             log.info("Token is invalid: {}", token);
-            return ResponseEntity.badRequest().body("Invalid token");
+            return ResponseEntity.ok().body("Invalid token");
         }
     }
 
